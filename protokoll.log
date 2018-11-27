@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.11.11)  27 NOV 2018 21:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/Arch Linux) (preloaded format=pdflatex 2018.11.11)  27 NOV 2018 22:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -709,18 +709,18 @@ LaTeX Font Info:    Try loading font information for T1+lmtt on input line 69.
 (/usr/share/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-<./imgs/logos/esse-logo-color.png, id=56, 123.0999pt x 123.0999pt>
+<./imgs/logos/esse-logo-color.png, id=72, 123.0999pt x 123.0999pt>
 File: ./imgs/logos/esse-logo-color.png Graphic file (type png)
 <use ./imgs/logos/esse-logo-color.png>
 Package pdftex.def Info: ./imgs/logos/esse-logo-color.png  used on input line 6
 9.
 (pdftex.def)             Requested size: 42.678pt x 42.67912pt.
-<./imgs/logos/inso-color.png, id=58, 189.3474pt x 189.3474pt>
+<./imgs/logos/inso-color.png, id=74, 189.3474pt x 189.3474pt>
 File: ./imgs/logos/inso-color.png Graphic file (type png)
 <use ./imgs/logos/inso-color.png>
 Package pdftex.def Info: ./imgs/logos/inso-color.png  used on input line 69.
 (pdftex.def)             Requested size: 42.67932pt x 42.67912pt.
-<./imgs/logos/inf-tu-logo-kombi.png, id=59, 287.6346pt x 138.7584pt>
+<./imgs/logos/inf-tu-logo-kombi.png, id=75, 287.6346pt x 138.7584pt>
 File: ./imgs/logos/inf-tu-logo-kombi.png Graphic file (type png)
 <use ./imgs/logos/inf-tu-logo-kombi.png>
 Package pdftex.def Info: ./imgs/logos/inf-tu-logo-kombi.png  used on input line
@@ -845,6 +845,31 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language append on input line 149.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language append on input line 149.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 152.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 152.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 155.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 155.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 161.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 161.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 161.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 161.
+ [4]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 162.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 162.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 164.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 164.
  (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2018/09/02 1.7 listings language file
 )
@@ -852,7 +877,7 @@ File: lstlang1.sty 2018/09/02 1.7 listings language file
 File: lstmisc.sty 2018/09/02 1.7 (Carsten Heinz)
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 155.
+nput line 170.
  (./example.c
 LaTeX Font Info:    Try loading font information for U+mvs on input line 2.
 
@@ -861,70 +886,61 @@ LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 5.
 )
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 159.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 174.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 163.
+(babel)             in language append on input line 182.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 163.
+(babel)             in language append on input line 182.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 163.
+(babel)             in language append on input line 182.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 163.
- [4]
+(babel)             in language append on input line 182.
+ [5]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 170.
+(babel)             in language append on input line 185.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 170.
+(babel)             in language append on input line 185.
 File: ./imgs/logos/esse-logo-color.png Graphic file (type png)
 <use ./imgs/logos/esse-logo-color.png>
 Package pdftex.def Info: ./imgs/logos/esse-logo-color.png  used on input line 1
-79.
+94.
 (pdftex.def)             Requested size: 182.09486pt x 182.10231pt.
 
 
 AED: lastpage setting LastPage
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 191.
+(babel)             in language append on input line 206.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 191.
+(babel)             in language append on input line 206.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 191.
+(babel)             in language append on input line 206.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 191.
-[5]
+(babel)             in language append on input line 206.
+[6]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 191.
+(babel)             in language append on input line 206.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 191.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 191.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 191.
- [6]
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language append on input line 191.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language append on input line 191.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 191.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 191.
+(babel)             in language append on input line 206.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 206.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 206.
  (./protokoll.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 191.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 191.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 206.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 206.
 Package rerunfilecheck Info: File `protokoll.out' has not changed.
-(rerunfilecheck)             Checksum: 98B929E5C43373A587D335CF3BB9FB8D;777.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 191.
+(rerunfilecheck)             Checksum: 363C4B878F0F0B4CF719A5C5251A5852;1031.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 206.
  ) 
 Here is how much of TeX's memory you used:
- 12266 strings out of 492642
- 185641 string characters out of 6135565
- 623397 words of memory out of 5000000
- 15885 multiletter control sequences out of 15000+600000
+ 12274 strings out of 492642
+ 185751 string characters out of 6135565
+ 622397 words of memory out of 5000000
+ 15889 multiletter control sequences out of 15000+600000
  56368 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  44i,13n,59p,9110b,1891s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf-dist/fo
-nts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.
-enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf-d
+nts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mat
+hit.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texmf-d
 ist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/
 lm/lmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/shar
 e/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1
@@ -932,15 +948,15 @@ e/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1
 sr/share/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf-dist/fonts
 /type1/public/lm/lmri12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmssbx
 10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texm
-f-dist/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf-dist/fonts/type1/publ
-ic/lm/lmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/s
-hare/texmf-dist/fonts/type1/public/lm/lmtti10.pfb></usr/share/texmf-dist/fonts/
-type1/public/lm/lmtto10.pfb></usr/share/texmf-dist/fonts/type1/public/marvosym/
-marvosym.pfb>
-Output written on protokoll.pdf (6 pages, 348282 bytes).
+f-dist/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf-dist/fonts/type1/publi
+c/lm/lmtk10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/share/texmf-dist/fonts/ty
+pe1/public/lm/lmtti10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtto10.
+pfb></usr/share/texmf-dist/fonts/type1/public/marvosym/marvosym.pfb>
+Output written on protokoll.pdf (6 pages, 355539 bytes).
 PDF statistics:
- 229 PDF objects out of 1000 (max. 8388607)
- 197 compressed objects within 2 object streams
- 57 named destinations out of 1000 (max. 500000)
- 120 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 255 PDF objects out of 1000 (max. 8388607)
+ 221 compressed objects within 3 object streams
+ 61 named destinations out of 1000 (max. 500000)
+ 152 words of extra memory for PDF output out of 10000 (max. 10000000)
 
