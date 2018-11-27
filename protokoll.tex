@@ -20,24 +20,24 @@
 
 % Team number or "0" for Lab0
 %TODO team number
-\newcommand{\team}{XX}
+\newcommand{\team}{48}
 % Date
 %TODO fill in creation date
-\newcommand{\datum}{01.01.1970}
+\newcommand{\datum}{27.11.2018}
 %TODO lab number
 % valid values: "Lab0", "Lab1" (be sure to use Uppercase for first character)
-\newcommand{\lab}{LabX}
+\newcommand{\lab}{Lab1}
 
 %TODO name of course
-\newcommand{\lvaname}{LVA-Name}
+\newcommand{\lvaname}{Introduction to Security}
 %TODO number of course
-\newcommand{\lvanr}{183.XXX}
+\newcommand{\lvanr}{183.594}
 %TODO year and term, for example: "SS 2012", "WS 2012", "SS 2013", etc.
-\newcommand{\semester}{WS/SS 20XX}
+\newcommand{\semester}{WS 2018}
 
 % Student data in Lab0 or 1. student of team in Lab1
-\newcommand{\studentAName}{John Doe}
-\renewcommand{\studentAMatrnr}{4711081}
+\newcommand{\studentAName}{Tristan Ulreich}
+\renewcommand{\studentAMatrnr}{01326158	}
 
 % 2. student of team in Lab1, for Lab0 or if your team has less students, remove these 2 lines
 \newcommand{\studentBName}{Martha Musterfrau}
@@ -97,16 +97,53 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 \subsection{Sub-Ueberschrift 2}
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 
-\section{Ueberschrift 2}
+\section{Forensik}
 
-\subsection{Sub-Ueberschrift 1}
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
+\subsection{Lizenzvertrag}
+Um diese Aufgabe bearbeiten zu können, muss man zuerst das PDF erlangen.
+Dazu habe ich mir die Datei in ~/ssh/config angelegt mit folgenden Daten:
+\newline
+\newline
+Host lab \newline
+HostName tese.inso.tuwien.ac.at \newline
+Port 12345 \newline
+User e01326158
+\newline
+\newline
+Anschließend habe ich im Terminal den Befehl ssh -L 8048:10.10.10.100:8048 lab ausgeführt und somit eine SSH-Portweiterleitung instanziert.
+Um nun das PDF herunterzuladen habe ich im Browser
 
-\subsection{Sub-Ueberschrift 2}
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. 
+$localhost:8048/downloads/Vertragsunterlagen_vertraulich.pdf$
+\newline
+\newline
+eingegeben um das PDF herunterzuladen. Im Anschluss habe ich einfach den ausgeschwärzten Text im PDF markiert und somit die "geschwärzte" Zahl herausfinden können.
 
-\subsection{Sub-Ueberschrift 3}
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
+$1.804.167.212$
+
+
+\subsection{Lizenz-Nachzahlung}
+Um die Lizennachzahlung heruaszufinden, habe ich auf den ausgegrauten Text herangezoomt und festgestellt, dass die ursprüngliche Zahl noch leicht sichtbar ist. Ich hätte auch den Kontrast des PDF-Ausschnittes ändern können um den Preis sichtbarer zu machen.
+
+$7.716.465.296$
+
+\subsection{Crypto-Ref-ID}
+Die Crypto-Ref-ID steht in den Eigenschaften des PDF Dokumentes.
+
+$A13m7X07$
+
+\subsection{Lizenz Berechtigung}
+Die Zahlungsreferenz ist abseits des sichtbaren (für den PDF-Reader) PDFs gespeichert.
+
+$RE151-774-T-31$
+
+
+
+\subsection{Appendix #07}
+Ich habe das PDF in LibreOffice-Draw geöffnet (PDF-Editor).
+Hinter dem Bild ist ein zweites wesentlich kleineres Bild gespeichert, mit der Zeit.
+
+$08:58:87$
+
 
 \section{Beispiele}
 
