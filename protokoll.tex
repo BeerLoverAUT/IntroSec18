@@ -40,8 +40,8 @@
 \renewcommand{\studentAMatrnr}{01326158	}
 
 % 2. student of team in Lab1, for Lab0 or if your team has less students, remove these 2 lines
-\newcommand{\studentBName}{Martha Musterfrau}
-\renewcommand{\studentBMatrnr}{1234567}
+\newcommand{\studentBName}{Jonathan Weber}
+\renewcommand{\studentBMatrnr}{01525243}
 
 % 3. student of team in Lab1, for Lab0 or if your team has less students, remove these 2 lines
 \newcommand{\studentCName}{Otto Mustermann}
@@ -96,6 +96,167 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
 
 \subsection{Sub-Ueberschrift 2}
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+\section{Intranet}
+
+\subsection{Netzwerk Dump}
+Um den Netzwerkdump zu erstellen habe ich mich mittels ssh von meiner tese umgebung auf den Scan-Host verbunden welche in meinem Zeitslot im Tuwel bekanngegeben wurde. \\
+\lstinline{ssh 10.10.15.101} \\
+Mit dem folgendem Befehl aus der aircrack-ng suite habe ich die Wireless-Card in den Monitor Mode versetzt. Dieser Mode erlaubt es alle Wireless-Packets zu empfangen, auch jene die nicht für mich bestimmt waren.
+\lstinline{airmon-ng start wlan} \\
+Dieser Befehl erstellt ein weiteres Interface welches als suufix mon enthält \( wlanmon \). \\
+Mittels dem Befehl \lstinline{airodump-ng wlanmon} startet die Aufzeichnung des Packetverkehrs. Solange dieser Befehl l\"auft wird aufgezeichnet. Weiters wird eine Tabelle mit den Access Points und den gerade aktiven Clients angezeigt. \\
+Für eine Aufgabe ist es nötig authentification pakete aufzuzeichnen. Um dies zu erreichen habe ich mittels einer zweiter ssh Verbindung ident zu jener bereits beschriebenen folgenden Befehl ausgeführt. \\
+\lstinline{aireplay-ng -0 10 -a 58:6D:8F:A9:25:53 -c [client MAC Address ] "wlanmon"} \\
+Die erste Option gibt an wie viele Versuche unternommen werden sollen den Client zu deauthentifizieren. Die Option -a gibt die MAC Adresse des Access Points an und die Option -c die Client MAC Adresse, welche eine von den Adressen ist welche mit dem befehl \lstinline{airodump-ng wlanmon} angezeigt wurden. \\
+Anschließend habe ich den erstellten Netzwerk Dump mittels ssh tunneling: \\
+\lstinline{ tunel:ssh -L 9000:10.10.15.101:22 -p 12345 e01525243@tese.inso.tuwien.ac.at, sftp -oPort=9000 is_team48@localhost } \\
+auf meinen Computer kopiert.
+
+
+\subsection{Email}
+
+Für diese Challenge habe ich das Netzwerkdumfile mit der Endung \lstinline{ .cap }  mit Wireshark geöffnet und nach SMTP paketen gefiltert. Eine Paket mit PlainText hat meine Aufmerksamkeit ergriffen und ich nutzte die Funktion von Wireshark den TCP Stream zu folgen. Daraufhin wurde mir jene Nachricht aus Abbildung 1 angezeigt aus welcher ich einfach das Passwort auslesen konnte.
+
+%bild hier emailIntra
+\begin{figure}[h!]
+  \centering
+  \fbox{
+    \includegraphics[width=0.8\textwidth]{./imgs/emailintranet.PNG}
+  }
+  \caption{SMTP Packet}
+  \label{fig:Abilldung 1}
+\end{figure}
+
+
+\subsection{Voip}
+Für diese CHallenge habe ich den Menüpunkt \lstinline{ Telephony } in Wireshark genutzt und dann über \lstinline{ Play Streams } abgespielt. Die Kontonummer könnte ich somit recht einfach heraushören. 
+
+
+\subsection{IRC}
+Um diese Challenge zu lösen habe ich in Wireshark den Filter \lstinline{irc } benutzt und dann die Option \lstinline{ Follow TCP STream }. Es wird mir ein chat verlauf angezeigt aus dem ich den Hash der Files auslesen kann. Zu sehen in Abbildung 2.
+
+\begin{figure}[h!]
+  \centering
+  \fbox{
+    \includegraphics[width=0.8\textwidth]{./imgs/ircintra.PNG}
+  }
+  \caption{irc chat}
+  \label{fig:Abilldung 2}
+\end{figure}
+
+
+
+\subsection{Wlan-Passwort}
+Um die verschlüsselte Kommunikation in Netzwerk SecureHotdog sehen zu können musste für diese Challenge das Wlan Passwort mittels einer Worldlist erraten werden. Ich habe eine deutsche Wordlist verwendet und das Passwort mit Hilfe der aircrack Suite erraten. Folgender Befehl wurde angewandt. \\
+\lstinline{ aircrack-ng dumpfile_20181125_200520-01.cap -w  ../worklists/german.dic } \\
+Als korrektes Passwort ist bei dieser Methode Gitarrenspiel angezeigt worden. Mit Hilfe dessen ich nun den Netzwerk Dump entschlüsseln konnte. \\
+\lstinline{airdecap-ng -e SecureHotDog -p Gitarrenspiel dumpfile_20181125_200520-01.cap  } 
+
+
+
+\subsection{FTP}
+Bei dieser Challenge musste der Name und Passwort des FTP Servers herausgefunden werden. Dies ist sehr leicht zu schaffen indem als Filter in Wireshark im entschlüsselten Netzwerk Dump ( siehe 2.5 ) \lstinline{ ftp } verwendet wird. Zu sehen in Abbildung 3.
+
+\begin{figure}[h!]
+  \centering
+  \fbox{
+    \includegraphics[width=0.8\textwidth]{./imgs/ftpintra.PNG}
+  }
+  \caption{ftp pakete}
+  \label{fig:Abilldung 3}
+\end{figure}
+
+\subsection{FTP 2}
+Um den Namen des Files herauszufinden, habe ich zuerst im entschlüsselden Netzwerk Dump (siehe 2.5) als Filter \lstinline{ ftp-data } verwendet. Hier habe ich erfahren, dass ein private key versendet wurde. Mit dem Filter \lstinline{ ftp } habe ich nun gesehen das ein File namens secubackend.key angefordert wurde.
+
+\subsection{HTTPS}
+Um das Logfile ansehen zu können habe ich in Wireshark im Netzwerk Dump des Netzwerkes HotDog den key aus aufgabe FTP 2 ( siehe 2.7 ) benutzt und unter Edit -> preferences -> SSL eingegeben um den SSL verkehr zu entschlüsseln. Zu sehen in Abblidung 4. 
+
+\begin{figure}[h!]
+  \centering
+  \fbox{
+    \includegraphics[width=0.8\textwidth]{./imgs/httpsintra1.PNG}
+  }
+  \caption{ftp pakete}
+  \label{fig:Abilldung 4}
+\end{figure}
+
+\pagebreak
+
+Nun konnte ich mit dem Filter ssl in Wireshark das http packet \lstinline{ GET /RXD7t1UFDS.log HTTP/1.1 } sehen. Mit der Option Follow ssl Stream habe ich das Logfile in Abbildung 5 einsehen können, aus welcher ich die gefragte Information auslesen konnte.
+
+\begin{figure}[h!]
+  \centering
+  \fbox{
+    \includegraphics[width=0.8\textwidth]{./imgs/ssl1.PNG}
+  }
+  \caption{ftp pakete}
+  \label{fig:Abilldung 5}
+\end{figure}
+
+
+\section{Scriptkiddie 101}
+
+\subsection{Komprimierte Sicherheit }
+Um die vierstellige Zahl zu finden habe ich mit \lstinline{ crunch 4 4 0123456789 } (min max erlaubte ziffern) ein File erstellt welches die zahlen 0000 bis 9999 beinhaltet und dann mittels meinem Script getPin.sh in Listing 1 ausgelesen. Wurde der richtige Code gefunden wird dieser ausgegeben.
+
+\begin{lstlisting}[caption=getPin.sh,label=code:getPin.sh,style=simple]
+#!/bin/bash 
+
+while read password; do
+    echo $password
+    7z l ./open_me_easy.7z  * -p$password &> /dev/null 
+    if [ $? -ne 2 ]
+    then
+       break
+    fi       
+done < ./pins.lst
+\end{lstlisting}
+
+\subsection{Proof of Work}
+Um für diese Challenge die passende Ganzzahl zu finden, habe ich ein Perl Script \lstinline{ pfw.pl } geschrieben welches alle Zahlen ab 100 000 bis 200 000 durchprobiert und erkennt wenn genügend Nullen im Hash vorrangestellt sind. Zu sehen in Listing 2.
+
+\begin{lstlisting}[caption=pfw.pl,label=code:pfw.pl,style=simple]
+#!/bin/perl
+#
+use Digest::SHA;
+use Digest::SHA qw(sha384_hex);
+#
+#my $suffix="o4ZdIddP3m0dAKNraZcTZQdoLAJCc9c6";  example
+my $suffix="nTRr6tVWlIhn2wvSSAP55apk0IvqhHjb";
+
+my $count = 100000;
+my $content;
+my $digest_h;
+my $digest_b;
+my $pos;
+
+until ($count > 200000) {
+  $content=$count . $suffix;	
+  $digest_h = sha384_hex($content);
+  $digest_b = hex2bin($digest_h);
+  $pos = index($digest_b, '1');
+  last if ($pos >= 17);
+  $count++;
+}  
+
+print "data:       $content\n";
+print "digest hex: $digest_h\n";
+print "number:     $count\n";
+print "digest bin: $digest_b\n"; 
+print "leading 0:  $pos\n";
+
+sub hex2bin {
+        my $h = shift;
+        my $hlen = length($h);
+        my $blen = $hlen * 4;
+        return unpack("B$blen", pack("H$hlen", $h));
+}
+\end{lstlisting}
+ 
+
+
 
 \section{Forensik}
 
